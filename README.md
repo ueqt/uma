@@ -2,7 +2,6 @@
 Ueqt's angular material components.
 
 [![npm version](https://badge.fury.io/js/uma.svg)](https://badge.fury.io/js/uma)
-[![CircleCI](https://circleci.com/gh/ueqt/uma/tree/master.svg?style=svg)](https://circleci.com/gh/ueqt/uma/tree/master)
 
 All the components are created using just [Angular](https://angular.io), [Material 2](https://material.angular.io) and [CDK](https://material.angular.io/cdk).
 
