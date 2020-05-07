@@ -2,6 +2,7 @@
 Ueqt's angular material components.
 
 [![npm version](https://badge.fury.io/js/uma.svg)](https://badge.fury.io/js/uma)
+![Build and Deploy](https://github.com/ueqt/uma/workflows/Build%20and%20Deploy/badge.svg)
 
 All the components are created using just [Angular](https://angular.io), [Material 2](https://material.angular.io) and [CDK](https://material.angular.io/cdk).
 
