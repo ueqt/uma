@@ -11,7 +11,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "packagr": "ng-packagr -p src/lib/package.json && yarn build:lib:scss && cp README.md src/lib/dist/"
+    "packagr": "ng-packagr -p src/lib/package.json && yarn build:lib:scss && cp README.md src/lib/dist/",
+    "installchangelog": "npm install -g conventional-changelog-cli",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w"
   },
   "private": true,
   "peerDependencies": {
@@ -66,6 +68,7 @@
   },
   "husky": {
     "hooks": {
+      "pre-commit": "npm run changelog && git add CHANGELOG.md",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
