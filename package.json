@@ -13,7 +13,7 @@
     "e2e": "ng e2e",
     "packagr": "ng-packagr -p src/lib/package.json && yarn build:lib:scss && cp README.md src/lib/dist/",
     "installchangelog": "npm install -g conventional-changelog-cli",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "private": true,
   "peerDependencies": {
