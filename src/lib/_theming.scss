@@ -1,0 +1,5 @@
+@import 'timer-picker/timer-picker-theme';
+
+@mixin uma-theme($theme) {
+    @include uma-timer-picker-theme($theme);
+}

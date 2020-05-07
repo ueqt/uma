@@ -1,0 +1,93 @@
+<!-- USING WITH INPUT -->
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Connect with an input
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form novalidate [formGroup]="form" (ngSubmit)="onSubmit(form)">
+      <mat-form-field>
+        <uma-timer-picker umaConnectedTimerPicker [umaConnectedTimerPickerOrigin]="inputTrigger"></uma-timer-picker>
+        <input matInput umaTimerPickerOrigin #inputTrigger="umaTimerPickerOrigin" placeholder="Timer"
+          formControlName="timer" />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<!-- WITH MIN AND MAX VALUE -->
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Use custom range
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form novalidate [formGroup]="form" (ngSubmit)="onSubmit(form)">
+      <mat-form-field>
+        <uma-timer-picker umaConnectedTimerPicker [umaConnectedTimerPickerOrigin]="minMaxInputTrigger"
+          umaTimerPickerMin="09:45" umaTimerPickerMax="20:30"></uma-timer-picker>
+        <input matInput umaTimerPickerOrigin #minMaxInputTrigger="umaTimerPickerOrigin" placeholder="Timer"
+          formControlName="timer" />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<!-- USING WITH 24h FORMAT -->
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Convert value to 24h
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form novalidate [formGroup]="form" (ngSubmit)="onSubmit(form)">
+      <mat-form-field>
+        <uma-timer-picker umaConnectedTimerPicker [umaConnectedTimerPickerOrigin]="formatTrigger"
+          [umaTimerPickerFormat]="'24'"></uma-timer-picker>
+        <input matInput umaTimerPickerOrigin #formatTrigger="umaTimerPickerOrigin" placeholder="Timer"
+          formControlName="timer" />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<!-- USING WITHOUT BUTTONS -->
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Hide buttons
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form novalidate [formGroup]="form" (ngSubmit)="onSubmit(form)">
+      <mat-form-field>
+        <uma-timer-picker umaConnectedTimerPicker [umaConnectedTimerPickerOrigin]="buttonTrigger" [hideButtons]="true">
+        </uma-timer-picker>
+        <input matInput umaTimerPickerOrigin #buttonTrigger="umaTimerPickerOrigin" placeholder="Timer"
+          formControlName="timer" />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<!-- COMPONETN OPENED -->
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Opened component
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+
+    <uma-timer-picker></uma-timer-picker>
+
+  </mat-card-content>
+</mat-card>

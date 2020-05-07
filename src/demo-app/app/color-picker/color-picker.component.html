@@ -1,0 +1,71 @@
+<h1 class="page-title">
+  <mat-icon>colorize</mat-icon>
+  Color Picker
+</h1>
+<p class="page-subtitle">documentation of
+  <span>uma-color-picker</span> component</p>
+
+<mat-tab-group>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      Overview
+    </ng-template>
+
+    <mat-grid-list cols="4" rowHeight="70px">
+      <mat-grid-tile colspan="3">
+        <h2>UmaColorPicker</h2>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <a href="https://github.com/tiaguinho/uma/tree/master/src/lib/color-picker" target="_blank">
+          <img src="https://tiaguinho.github.io/uma/demo-app/assets/img/source-code.png" alt="Source Code"
+            class="source-code" />
+        </a>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <p>When import the
+      <code>UmaColorPickerModule</code>, you can provide a configuration for the empy value.</p>
+
+    <pre class="code-snippet"><code class="lang-typescript"> import {{ '{' }} UmaColorPickerModule {{ '}' }} from 'uma';
+
+  <span class="hljs-variable">@NgModule</span>({{ '{' }}
+    ...
+    <span class="hljs-attribute">imports</span>: [
+      UmaColorPickerModule.forRoot({{ '{' }}
+        <span class="hljs-attribute">empty_color</span>: <span class="hljs-string">'transparent',</span>
+        <span class="hljs-attribute">used_colors</span>: <span class="hljs-string">['#000000', '#FFF555']</span>
+      {{ '}' }})
+    ]
+    ...
+  {{ '}' }})
+</code></pre>
+    <p>The default value is
+      <code>none</code>, but you can set anything you want.
+    </p>
+
+    <p>For the
+      <code>@Input</code> and
+      <code>@Output</code> of the component, check API tab.
+    </p>
+
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      API
+    </ng-template>
+
+    <app-color-picker-api></app-color-picker-api>
+  </mat-tab>
+
+  <mat-tab label="Examples">
+    <ng-template mat-tab-label>
+      Examples
+    </ng-template>
+
+    <app-color-picker-examples></app-color-picker-examples>
+  </mat-tab>
+
+</mat-tab-group>

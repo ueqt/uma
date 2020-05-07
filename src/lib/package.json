@@ -1,0 +1,53 @@
+{
+  "$schema": "../../node_modules/ng-packagr/package.schema.json",
+  "name": "uma",
+  "version": "9.0.1",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts"
+    },
+    "dest": "dist"
+  },
+  "author": "Tiago Temporin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tiaguinho/uma/issues"
+  },
+  "homepage": "https://github.com/tiaguinho/uma#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiaguinho/uma.git"
+  },
+  "keywords": [
+    "color-picker",
+    "timer-picker",
+    "scrollspy",
+    "speed-dial",
+    "color picker",
+    "timer picker",
+    "color",
+    "angular",
+    "material",
+    "timer",
+    "ng",
+    "ng-color-picker",
+    "ngx-color-picker",
+    "ng-timer-picker",
+    "ngx-timer-picker",
+    "uma"
+  ],
+  "peerDependencies": {
+    "@angular/animations": "^9.1.0",
+    "@angular/cdk": "^9.2.0",
+    "@angular/common": "^9.1.0",
+    "@angular/compiler": "^9.1.0",
+    "@angular/core": "^9.1.0",
+    "@angular/forms": "^9.1.0",
+    "@angular/material": "^9.2.0",
+    "@angular/platform-browser": "^9.1.0",
+    "@angular/platform-browser-dynamic": "^9.1.0",
+    "core-js": "^3.6.4",
+    "rxjs": "~6.5.4",
+    "zone.js": "^0.10.3"
+  }
+}

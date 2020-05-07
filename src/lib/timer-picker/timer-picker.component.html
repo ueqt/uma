@@ -1,0 +1,67 @@
+<!-- show component inside overlay -->
+<ng-container *ngIf="connected">
+  <ng-template cdkConnectedOverlay cdkConnectedOverlayHasBackdrop
+    cdkConnectedOverlayBackdropClass="uma-timer-picker-backdrop" [cdkConnectedOverlayOrigin]="trigger"
+    [cdkConnectedOverlayOpen]="isOpen" (backdropClick)="backdropClick()">
+
+    <ng-template [cdkPortalOutlet]="panelComponent"></ng-template>
+
+  </ng-template>
+</ng-container>
+
+<ng-template *ngIf="!connected" [cdkPortalOutlet]="panelComponent"></ng-template>
+
+<ng-template cdkPortal #panelComponent="cdkPortal">
+  <div class="uma-timer-picker-overlay mat-elevation-z6" role="dialog" aria-label="Timer picker">
+
+    <div class="uma-timer-picker-header mat-primary">
+      <button mat-icon-button class="uma-timer-picker-hours" [ngClass]="{ 'uma-active': focus === 'hour' }"
+        (click)="focus = 'hour'">
+        {{ hour }}
+      </button>
+      <span class="uma-timer-picker-separator"></span>
+      <button mat-icon-button class="uma-timer-picker-minutes" [ngClass]="{ 'uma-active': focus === 'min' }"
+        (click)="focus = 'min'">
+        {{ minute }}
+      </button>
+
+      <div class="uma-timer-picker-am-pm">
+        <button mat-icon-button [ngClass]="{ 'uma-active': period === 'am' }" (click)="changePeriod('am')">
+          AM
+        </button>
+        <button mat-icon-button [ngClass]="{ 'uma-active': period === 'pm' }" (click)="changePeriod('pm')">
+          PM
+        </button>
+      </div>
+    </div>
+
+    <div class="uma-timer-picker-content">
+
+      <div class="uma-timer-picker-clock">
+        <div class="uma-timer-picker-dot"></div>
+        <div class="uma-timer-picker-line" [ngClass]="getSelectedClass()"></div>
+        <ng-container *ngFor="let option of clock$ | async;let i = index;">
+          <button mat-icon-button class="uma-timer-picker-option"
+            [ngClass]="{ 'uma-timer-picker-option-selected': focus === 'hour' && hour == option || focus === 'min' && minute === option }"
+            [id]="'option-'+i" (click)="select(option)" [disabled]="isOptionDisabled(option)">
+            {{ option }}
+          </button>
+        </ng-container>
+      </div>
+
+    </div>
+
+    <div *ngIf="!hideButtons" class="uma-timer-picker-actions" dir="rtl">
+
+      <button mat-button role="button" aria-label="Confirm" (click)="confirmSelectedTime()">
+        {{ btnConfirm }}
+      </button>
+
+      <button mat-button role="button" aria-label="Cancel" (click)="cancelSelection()">
+        {{ btnCancel }}
+      </button>
+
+    </div>
+
+  </div>
+</ng-template>

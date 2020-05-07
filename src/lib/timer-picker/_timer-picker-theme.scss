@@ -1,0 +1,25 @@
+@import '~@angular/material/theming';
+
+@mixin uma-timer-picker-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  .uma-timer-picker-header {
+   background: mat-color($primary)!important;
+  }
+
+  .uma-timer-picker-clock {
+    .uma-timer-picker-dot {
+     background-color: mat-color($primary)!important;
+    }
+
+    .uma-timer-picker-line {
+     background-color: mat-color($primary)!important;
+    }
+
+    .uma-timer-picker-option {
+      &.uma-timer-picker-option-selected {
+        background-color: mat-color($primary)!important;
+      }
+    }
+  }
+}

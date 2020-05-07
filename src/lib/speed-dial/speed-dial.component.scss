@@ -1,0 +1,96 @@
+@mixin uma-speed-dial-container($box-orient, $flex-direction) {
+  -webkit-box-orient: $box-orient;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: $flex-direction;
+  flex-direction: $flex-direction;
+}
+
+@mixin uma-speed-dial-box-order($ordinal-group, $order) {
+  -webkit-box-ordinal-group: $ordinal-group;
+  -webkit-order: $order;
+  order: $order;
+}
+
+@mixin uma-speed-dial-actions($box-orient, $box-direction, $flex-direction, $ordinal-group, $order, $action-item-margin-direction) {
+  -webkit-box-orient: $box-orient;
+  -webkit-box-direction: $box-direction;
+  -webkit-flex-direction: $flex-direction;
+  flex-direction: $flex-direction;
+
+  @include uma-speed-dial-box-order($ordinal-group, $order);
+
+  .mat-mini-fab {
+    margin-#{$action-item-margin-direction}: 10px;
+  }
+}
+
+.uma-speed-dial-container {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  z-index: 20;
+
+  button {
+    pointer-events: auto;
+    z-index: 24;
+  }
+
+  ::ng-deep uma-speed-dial-actions {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    height: auto;
+  }
+
+  &.uma-speed-dial-direction-up {
+    @include uma-speed-dial-container(vertical, column);
+
+    button {
+      @include uma-speed-dial-box-order(3, 2);
+    }
+
+    ::ng-deep uma-speed-dial-actions {
+      @include uma-speed-dial-actions(vertical, reverse, column-reverse, 2, 1, bottom);
+    }
+  }
+
+  &.uma-speed-dial-direction-down {
+    @include uma-speed-dial-container(vertical, column);
+
+    button {
+      @include uma-speed-dial-box-order(2, 1);
+    }
+
+    ::ng-deep uma-speed-dial-actions {
+      @include uma-speed-dial-actions(vertical, normal, column, 3, 2, top);
+    }
+  }
+
+  &.uma-speed-dial-direction-left {
+    @include uma-speed-dial-container(horizontal, row);
+
+    button {
+      @include uma-speed-dial-box-order(3, 2);
+    }
+
+    ::ng-deep uma-speed-dial-actions {
+      @include uma-speed-dial-actions(horizontal, normal, row-reverse, 2, 1, right);
+    }
+  }
+
+  &.uma-speed-dial-direction-right {
+    @include uma-speed-dial-container(horizontal, row);
+
+    button {
+      @include uma-speed-dial-box-order(2, 1);
+    }
+
+    ::ng-deep uma-speed-dial-actions {
+      @include uma-speed-dial-actions(horizontal, normal, row, 3, 2, left);
+    }
+  }
+}

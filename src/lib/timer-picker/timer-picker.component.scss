@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$primary: #00796b;
+
+.uma-timer-picker-overlay {
+  width: 290px;
+  height: 400px;
+}
+
+.uma-timer-picker-header {
+  display: flex;
+  width: 220px;
+  height: 65px;
+  padding: 10px 0 5px 70px;
+  background: $primary;
+}
+
+.uma-timer-picker-hours,
+.uma-timer-picker-minutes {
+  width: 63px;
+  height: 63px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.3);
+
+  &.uma-standalone {
+    text-align: right;
+  }
+  &.uma-active {
+    color: rgba(255, 255, 255, 1);
+  }
+}
+
+.uma-timer-picker-separator {
+  font-family: 'Roboto', sans-serif;
+  font-size: 43px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.3);
+  margin: 5px 5px 0 0;
+
+  &::after {
+    content: ':';
+  }
+}
+
+.uma-timer-picker-am-pm {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+
+  button {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.3);
+
+    &.uma-active {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+}
+
+.uma-timer-picker-content {
+  width: inherit;
+  height: 260px;
+  padding: 15px 0 5px 0;
+  background-color: #ffffff;
+}
+
+.uma-timer-picker-clock {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  background-color: #eeeeee;
+  border-radius: 50%;
+  text-align: center;
+
+  .uma-timer-picker-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $primary;
+    top: 125px;
+    left: 125px;
+  }
+
+  .uma-timer-picker-line {
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    top: 11.5%;
+    left: 51%;
+    transform-origin: 50% 100%;
+    background-color: $primary;
+
+    // 12h or 00m
+    &.selected-index-0 {
+      transform: rotateZ(0deg);
+      transition: 240ms ease;
+    }
+    // 11h or 55m
+    &.selected-index-1 {
+      transform: rotateZ(327deg);
+      transition: 240ms ease;
+    }
+    // 1h or 05m
+    &.selected-index-2 {
+      transform: rotateZ(30deg);
+      transition: 240ms ease;
+    }
+    // 10h or 50m
+    &.selected-index-3 {
+      transform: rotateZ(300deg);
+      transition: 240ms ease;
+    }
+    // 2h or 10m
+    &.selected-index-4 {
+      transform: rotateZ(60deg);
+      transition: 240ms ease;
+    }
+    // 9h or 45m
+    &.selected-index-5 {
+      transform: rotateZ(270deg);
+      transition: 240ms ease;
+    }
+    // 3h or 15m
+    &.selected-index-6 {
+      transform: rotateZ(90deg);
+      transition: 240ms ease;
+    }
+    // 8h or 40m
+    &.selected-index-7 {
+      transform: rotateZ(240deg);
+      transition: 240ms ease;
+    }
+    // 4h or 20m
+    &.selected-index-8 {
+      transform: rotateZ(120deg);
+      transition: 240ms ease;
+    }
+    // 7h or 35m
+    &.selected-index-9 {
+      transform: rotateZ(210deg);
+      transition: 240ms ease;
+    }
+    // 5h or 25m
+    &.selected-index-10 {
+      transform: rotateZ(150deg);
+      transition: 240ms ease;
+    }
+    // 6h or 30m
+    &.selected-index-11 {
+      transform: rotateZ(180deg);
+      transition: 240ms ease;
+    }
+  }
+
+  .uma-timer-picker-option {
+    position: absolute;
+
+    &.uma-timer-picker-option-selected {
+      color: #ffffff;
+      background-color: $primary;
+    }
+
+    &#option-0 {
+      top: 0;
+      left: 113px;
+    }
+    &#option-1 {
+      top: 25px;
+      left: 55px;
+    }
+    &#option-2 {
+      top: 25px;
+      right: 55px;
+    }
+    &#option-3 {
+      top: 63px;
+      left: 20px;
+    }
+    &#option-4 {
+      top: 63px;
+      right: 20px;
+    }
+    &#option-5 {
+      top: 113px;
+      left: 0;
+    }
+    &#option-6 {
+      top: 113px;
+      right: 0;
+    }
+    &#option-7 {
+      bottom: 55px;
+      left: 20px;
+    }
+    &#option-8 {
+      bottom: 55px;
+      right: 20px;
+    }
+    &#option-9 {
+      bottom: 20px;
+      left: 63px;
+    }
+    &#option-10 {
+      bottom: 20px;
+      right: 55px;
+    }
+    &#option-11 {
+      bottom: 0;
+      left: 113px;
+    }
+  }
+}
+
+.uma-timer-picker-actions {
+  display: flex;
+  padding: 4px;
+  background-color: #ffffff;
+
+  button {
+    color: #100214;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+::ng-deep .mat-icon-button {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
