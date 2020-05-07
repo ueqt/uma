@@ -6,6 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
+    "build:github": "ng build --prod --base-href=https://ueqt.github.io/uma/",
     "build:lib:scss": "scss-bundle -c scss-bundle.config.json",
     "docs": "ng deploy --base-href=https://ueqt.github.io/uma/",
     "test": "ng test",
