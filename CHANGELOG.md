@@ -1,8 +1,9 @@
-## 9.0.1 (2020-05-07)
+## 9.0.1 (2020-05-12)
 
 
 ### Bug Fixes
 
+* fix changelog ([192b58a](https://github.com/ueqt/uma/commit/192b58a35f3bd8b7c75b89c01ba967ca9dd9db60))
 * fix deploy ([297246c](https://github.com/ueqt/uma/commit/297246c8c25ddb1dbd0c561771055a03b38fa3fb))
 
 
