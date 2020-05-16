@@ -1,6 +1,6 @@
 {
   "name": "@ueqt/uma",
-  "version": "9.0.2",
+  "version": "9.0.3",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -57,7 +57,7 @@
     "rxjs": "^6.5.5",
     "ts-node": "~8.10.1",
     "tslint": "~6.1.2",
-    "typescript": "^3.9.2",
+    "typescript": "~3.8.3",
     "uglify-es": "^3.3.9",
     "zone.js": "~0.10.3"
   },
