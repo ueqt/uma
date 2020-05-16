@@ -15,10 +15,8 @@ All the components have the prefix `uma` followed by the package name.
 
 | Component    | Status    | package          |
 | ------------ | --------- | ---------------- |
-| Carousel | -         | ---              |
+| Html Tooltip | Available | uma-tooltip |
 | Color Picker | Available | uma-color-picker |
-| File Manager | -         | ---              |
-| Google Recaptcha | -         | ---              |
 | Scrollspy    | Available | uma-scrollspy    |
 | Speed Dial   | Available | uma-speed-dial   |
 | Timer Picker | Available | uma-timer-picker |
