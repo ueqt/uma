@@ -1,7 +1,7 @@
 # Uma
 Ueqt's angular material components.
 
-![npm version](https://badge.fury.io/js/uma.svg)](https://badge.fury.io/js/uma)
+[![npm version](https://badge.fury.io/js/uma.svg)](https://badge.fury.io/js/uma)
 ![Publish to npm](https://github.com/ueqt/uma/workflows/Publish%20to%20npm/badge.svg)
 ![Build and Deploy](https://github.com/ueqt/uma/workflows/Build%20and%20Deploy/badge.svg)
 
