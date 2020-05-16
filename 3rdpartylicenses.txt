@@ -91,6 +91,9 @@ MIT
 @angular/router
 MIT
 
+@ueqt/uma
+MIT
+
 core-js
 MIT
 Copyright (c) 2014-2020 Denis Pushkarev
@@ -368,9 +371,6 @@ Apache-2.0
  limitations under the License.
  
 
-
-uma
-MIT
 
 zone.js
 MIT
