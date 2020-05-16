@@ -6,6 +6,7 @@
 * fix build ([b99e7e1](https://github.com/ueqt/uma/commit/b99e7e1339f6b4eb2fcf931aaeb2c24d2ea64e1f))
 * fix changelog ([192b58a](https://github.com/ueqt/uma/commit/192b58a35f3bd8b7c75b89c01ba967ca9dd9db60))
 * fix deploy ([297246c](https://github.com/ueqt/uma/commit/297246c8c25ddb1dbd0c561771055a03b38fa3fb))
+* fix readme badge ([5fc4c1f](https://github.com/ueqt/uma/commit/5fc4c1f12761470a99915ac5f569f2c5951f3d77))
 * remove private ([d769431](https://github.com/ueqt/uma/commit/d769431d7a2c2287effa34d73538b3506483976b))
 
 
