@@ -1,6 +1,6 @@
 {
   "name": "@ueqt/uma",
-  "version": "9.0.3",
+  "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",

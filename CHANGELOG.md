@@ -1,4 +1,4 @@
-## 9.0.3 (2020-05-16)
+# 0.0.0 (2020-05-16)
 
 
 ### Bug Fixes
@@ -23,6 +23,7 @@
 * add weekly-digest ([15c32ea](https://github.com/ueqt/uma/commit/15c32ead88dd37e683c661ed0b5e50c4d6e7d45b))
 * fix changelog ([9a899f9](https://github.com/ueqt/uma/commit/9a899f98328e5507cc0db14bc9006ca09810aeab))
 * fix deploy ([2122538](https://github.com/ueqt/uma/commit/2122538de10ebf44545613d087145ffac971f71b))
+* publish to npm only dist ([280da8c](https://github.com/ueqt/uma/commit/280da8ccee566d500ef2806079cbb7cba420808a))
 
 
 
