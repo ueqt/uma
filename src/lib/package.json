@@ -11,12 +11,12 @@
   "author": "Tiago Temporin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tiaguinho/uma/issues"
+    "url": "https://github.com/ueqt/uma/issues"
   },
-  "homepage": "https://github.com/tiaguinho/uma#readme",
+  "homepage": "https://github.com/ueqt/uma#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tiaguinho/uma.git"
+    "url": "git+https://github.com/ueqt/uma.git"
   },
   "keywords": [
     "color-picker",

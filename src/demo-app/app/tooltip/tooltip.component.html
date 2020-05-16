@@ -1,9 +1,9 @@
 <h1 class="page-title">
-  <mat-icon>timer</mat-icon>
-  Timer Picker
+  <mat-icon>feedback</mat-icon>
+  Tooltip
 </h1>
 <p class="page-subtitle">Some examples of how to use the
-  <span>uma-timer-picker</span> component</p>
+  <span>uma-tooltip</span> component</p>
 
 <mat-tab-group>
 
@@ -18,23 +18,24 @@
       </mat-grid-tile>
 
       <mat-grid-tile>
-        <a href="https://github.com/ueqt/uma/tree/master/src/lib/timer-picker" target="_blank">
+        <a href="https://github.com/ueqt/uma/tree/master/src/lib/tooltip" target="_blank">
           <img src="https://ueqt.github.io/uma/demo-app/assets/img/source-code.png" alt="Source Code"
             class="source-code" />
         </a>
       </mat-grid-tile>
     </mat-grid-list>
 
-    <p>This is a implementation of timer picker for material design.</p>
+    <p>Because Material Design Tooltip not support html, so you can use this.</p>
+    <p>This is a implementation of tooltip for material design.</p>
     <p>To use this component, just import the module from
       <code>uma</code> package.</p>
 
-    <pre class="code-snippet"><code class="lang-typescript">  import {{ '{' }} UmaTimerPickerModule {{ '}' }} from 'uma';
+    <pre class="code-snippet"><code class="lang-typescript">  import {{ '{' }} UmaTooltipModule {{ '}' }} from 'uma';
 
   <span class="hljs-variable">@NgModule</span>({{ '{' }}
     ...
     <span class="hljs-attribute">imports</span>: [
-      UmaTimerPickerModule
+      UmaTooltipModule
     ]
     ...
   {{ '}' }})
@@ -43,20 +44,20 @@
 
   </mat-tab>
 
-  <mat-tab>
+  <!-- <mat-tab>
     <ng-template mat-tab-label>
       API
     </ng-template>
 
-    <app-timer-picker-api></app-timer-picker-api>
-  </mat-tab>
+    <app-tooltip-api></app-tooltip-api>
+  </mat-tab> -->
 
   <mat-tab label="Examples">
     <ng-template mat-tab-label>
       Examples
     </ng-template>
 
-    <app-timer-picker-examples></app-timer-picker-examples>
+    <app-tooltip-examples></app-tooltip-examples>
   </mat-tab>
 
 </mat-tab-group>

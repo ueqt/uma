@@ -65,7 +65,7 @@ export class PizzaPartyAppModule { }
 Install uma package:
 
 ```bash
-    npm install uma
+    npm install @ueqt/uma
 ```
 
 ## Theming

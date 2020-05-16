@@ -6,6 +6,10 @@ export const routes: Routes = [
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
   },
   {
+    path: 'tooltip',
+    loadChildren: () => import('./tooltip/tooltip.module').then(m => m.TooltipModule),
+  },
+  {
     path: 'color-picker',
     loadChildren: () => import('./color-picker/color-picker.module').then(m => m.ColorPickerModule),
   },

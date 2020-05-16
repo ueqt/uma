@@ -1,0 +1,3 @@
+<div class="mat-tooltip" [class]="tooltipClass" [class.mat-tooltip-handset]="(_isHandset | async)?.matches"
+    [@state]="_visibility" (@state.start)="_animationStart()" (@state.done)="_animationDone($event)"
+    [innerHTML]="message"></div>
