@@ -10,6 +10,7 @@
 * fix readme ([8b4acc2](https://github.com/ueqt/uma/commit/8b4acc2696eeff142b8454f39c172e79f2b840d3))
 * fix readme badge ([5fc4c1f](https://github.com/ueqt/uma/commit/5fc4c1f12761470a99915ac5f569f2c5951f3d77))
 * remove private ([d769431](https://github.com/ueqt/uma/commit/d769431d7a2c2287effa34d73538b3506483976b))
+* typescript version ([55ac3a4](https://github.com/ueqt/uma/commit/55ac3a4300dfa3aaf6a507967eb92585a3a0fae4))
 * update to latest packages ([b53266b](https://github.com/ueqt/uma/commit/b53266bf50ad60d60fadf2ed897b969940079ade))
 
 

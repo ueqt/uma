@@ -1,14 +1,14 @@
 {
   "$schema": "../../node_modules/ng-packagr/package.schema.json",
-  "name": "uma",
-  "version": "9.0.1",
+  "name": "@ueqt/uma",
+  "version": "9.0.3",
   "ngPackage": {
     "lib": {
       "entryFile": "index.ts"
     },
     "dest": "dist"
   },
-  "author": "Tiago Temporin",
+  "author": "ueqt",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ueqt/uma/issues"
@@ -19,6 +19,7 @@
     "url": "git+https://github.com/ueqt/uma.git"
   },
   "keywords": [
+    "tooltip",
     "color-picker",
     "timer-picker",
     "scrollspy",
@@ -37,17 +38,17 @@
     "uma"
   ],
   "peerDependencies": {
-    "@angular/animations": "^9.1.0",
-    "@angular/cdk": "^9.2.0",
-    "@angular/common": "^9.1.0",
-    "@angular/compiler": "^9.1.0",
-    "@angular/core": "^9.1.0",
-    "@angular/forms": "^9.1.0",
-    "@angular/material": "^9.2.0",
-    "@angular/platform-browser": "^9.1.0",
-    "@angular/platform-browser-dynamic": "^9.1.0",
-    "core-js": "^3.6.4",
-    "rxjs": "~6.5.4",
+    "@angular/animations": "^9.1.7",
+    "@angular/cdk": "^9.2.3",
+    "@angular/common": "^9.1.7",
+    "@angular/compiler": "^9.1.7",
+    "@angular/core": "^9.1.7",
+    "@angular/forms": "^9.1.7",
+    "@angular/material": "^9.2.3",
+    "@angular/platform-browser": "^9.1.7",
+    "@angular/platform-browser-dynamic": "^9.1.7",
+    "core-js": "^3.6.5",
+    "rxjs": "~6.5.5",
     "zone.js": "^0.10.3"
   }
 }

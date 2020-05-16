@@ -101,6 +101,10 @@ $demo-theme: mat-light-theme($demo-primary, $demo-accent, $demo-warn);
 
 For more examples, you can see our [app-demo](https://github.com/ueqt/uma/blob/master/src/demo-app/app) folder or read the full [documentation](https://ueqt.github.io/uma)
 
+## package
+
+version need change `src/lib/package.json`
+
 ## License
 
 [The MIT License (MIT) Copyright (c) 2020](http://opensource.org/licenses/MIT)
