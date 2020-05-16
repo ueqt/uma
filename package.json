@@ -15,7 +15,6 @@
     "packagr": "ng-packagr -p src/lib/package.json && yarn build:lib:scss && cp README.md src/lib/dist/",
     "changelog": "npx conventional-changelog-cli -p angular -s -i CHANGELOG.md -r 0"
   },
-  "private": true,
   "peerDependencies": {
     "core-js": "^3.6.5"
   },

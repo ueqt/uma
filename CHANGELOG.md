@@ -10,6 +10,7 @@
 
 ### Features
 
+* add badge for publish build ([d439419](https://github.com/ueqt/uma/commit/d439419280626033fe66b14fc64e412c0453cb51))
 * add changelog ([cd94931](https://github.com/ueqt/uma/commit/cd94931e42c2d877503363597b8d66e3d7fecaae))
 * add commitlint ([58e78bc](https://github.com/ueqt/uma/commit/58e78bcf2129325bc396d5c8fefe6a66424bcde6))
 * add tooltip and auto publish to npm ([986dbee](https://github.com/ueqt/uma/commit/986dbeefb210bb054a8fa4d9f1ec5e050aabb4de))
