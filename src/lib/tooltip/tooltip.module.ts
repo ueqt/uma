@@ -14,8 +14,9 @@ import { UmaTooltipComponent } from './tooltip.component';
         OverlayModule,
         MatCommonModule,
     ],
-    exports: [UmaTooltipDirective, UmaTooltipComponent, MatCommonModule],
+    exports: [UmaTooltipDirective, UmaTooltipComponent],
     declarations: [UmaTooltipDirective, UmaTooltipComponent],
+    entryComponents: [UmaTooltipComponent],
     providers: [
         MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY_PROVIDER,
     ]

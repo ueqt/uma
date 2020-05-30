@@ -1,3 +1,8 @@
 <div class="mat-tooltip" [class]="tooltipClass" [class.mat-tooltip-handset]="(_isHandset | async)?.matches"
-    [@state]="_visibility" (@state.start)="_animationStart()" (@state.done)="_animationDone($event)"
-    [innerHTML]="message"></div>
+    [@state]="_visibility" (@state.start)="_animationStart()" (@state.done)="_animationDone($event)">
+    <div *ngIf="!isTemplate">{{message}}</div>
+    <div *ngIf="isTemplate">
+        <ng-container *ngTemplateOutlet="message">
+        </ng-container>
+    </div>
+</div>

@@ -1,9 +1,8 @@
 import { AnimationEvent } from '@angular/animations';
-import { Component, ViewEncapsulation, ChangeDetectionStrategy, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy, OnDestroy, ChangeDetectorRef, TemplateRef } from '@angular/core';
 import { matTooltipAnimations, TooltipVisibility } from '@angular/material/tooltip';
 import { Subject, Observable } from 'rxjs';
 import { BreakpointState, Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
 
 /**
  * Internal component that wraps the tooltip's content.
@@ -26,7 +25,11 @@ import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
 })
 export class UmaTooltipComponent implements OnDestroy {
     /** Message to display in the tooltip */
-    message: SafeHtml;
+    message: string | TemplateRef<void>;
+
+    get isTemplate() {
+        return this.message instanceof TemplateRef;
+    }
 
     /** Classes to be added to the tooltip. Supports the same syntax as `ngClass`. */
     tooltipClass: string | string[] | Set<string> | { [key: string]: any };

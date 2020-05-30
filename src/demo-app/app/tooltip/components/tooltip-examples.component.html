@@ -7,6 +7,13 @@
   </mat-card-header>
 
   <mat-card-content>
+    <span umaTooltip="tips">hover me</span>
+  </mat-card-content>
+
+  <mat-card-content>
     <span [umaTooltip]="tips">hover me</span>
   </mat-card-content>
+  <ng-template #tips>
+    <div style="color: red;font-size: 20px;;">It's tooltip!</div>
+  </ng-template>
 </mat-card>

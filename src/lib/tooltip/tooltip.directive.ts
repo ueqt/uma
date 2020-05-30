@@ -1,4 +1,4 @@
-import { Directive, Input, ElementRef, ViewContainerRef, NgZone, Inject, Optional, OnDestroy, OnInit } from '@angular/core';
+import { Directive, Input, ElementRef, ViewContainerRef, NgZone, Inject, Optional, OnDestroy, OnInit, TemplateRef } from '@angular/core';
 import { MatTooltipDefaultOptions, MAT_TOOLTIP_SCROLL_STRATEGY, MAT_TOOLTIP_DEFAULT_OPTIONS, TooltipPosition, TOOLTIP_PANEL_CLASS, getMatTooltipInvalidPositionError } from '@angular/material/tooltip';
 import { Overlay, ScrollDispatcher, OverlayRef, ScrollStrategy, FlexibleConnectedPositionStrategy, OriginConnectionPosition, OverlayConnectionPosition, HorizontalConnectionPos, VerticalConnectionPos } from '@angular/cdk/overlay';
 import { Platform } from '@angular/cdk/platform';
@@ -6,7 +6,7 @@ import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { ESCAPE, hasModifierKey } from '@angular/cdk/keycodes';
 import { AriaDescriber, FocusMonitor } from '@angular/cdk/a11y';
 import { Directionality } from '@angular/cdk/bidi';
-import { HammerLoader, HAMMER_LOADER, DomSanitizer } from '@angular/platform-browser';
+import { HammerLoader, HAMMER_LOADER } from '@angular/platform-browser';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { Subject } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
@@ -74,30 +74,33 @@ export class UmaTooltipDirective implements OnDestroy, OnInit {
     // tslint:disable-next-line: no-input-rename
     @Input('matTooltipHideDelay') hideDelay = this._defaultOptions.hideDelay;
 
-    private _message = '';
+    private _message: string | TemplateRef<void> = '';
 
     /** The message to be displayed in the tooltip */
     @Input('umaTooltip')
     get message() { return this._message; }
-    set message(value: string | any) {
-        this._ariaDescriber.removeDescription(this._elementRef.nativeElement, this._message);
-
-        // If the message is not a string (e.g. number), convert it to a string and trim it.
-        if (typeof (value) === 'string') {
-            this._message = value != null ? `${value}`.trim() : '';
+    set message(value: string | TemplateRef<void>) {
+        if (this._message instanceof TemplateRef) {
+            this._ariaDescriber.removeDescription(this._elementRef.nativeElement, this._message.elementRef.nativeElement);
         } else {
-            this._message = (value as any).firstElementChild.innerHTML;
+            this._ariaDescriber.removeDescription(this._elementRef.nativeElement, this._message);
         }
-
-        // if (this._message) {
-        //     this._message = this._message.replace(/\n/g, '<br/>');
-        // }
+        // If the message is not a string (e.g. number), convert it to a string and trim it.
+        if (value instanceof TemplateRef) {
+            this._message = value;
+        } else {
+            this._message = value != null ? `${value}`.trim() : '';
+        }
 
         if (!this._message && this._isTooltipVisible()) {
             this.hide(0);
         } else {
             this._updateTooltipMessage();
-            this._ariaDescriber.describe(this._elementRef.nativeElement, this.message);
+            if (this.message instanceof TemplateRef) {
+                this._ariaDescriber.describe(this._elementRef.nativeElement, this.message.elementRef.nativeElement);
+            } else {
+                this._ariaDescriber.describe(this._elementRef.nativeElement, this.message);
+            }
         }
     }
 
@@ -121,7 +124,6 @@ export class UmaTooltipDirective implements OnDestroy, OnInit {
         private _elementRef: ElementRef<HTMLElement>,
         private _scrollDispatcher: ScrollDispatcher,
         private _viewContainerRef: ViewContainerRef,
-        private sanitizer: DomSanitizer,
         private _ngZone: NgZone,
         platform: Platform,
         private _ariaDescriber: AriaDescriber,
@@ -206,7 +208,11 @@ export class UmaTooltipDirective implements OnDestroy, OnInit {
         this._destroyed.next();
         this._destroyed.complete();
 
-        this._ariaDescriber.removeDescription(this._elementRef.nativeElement, this.message);
+        if (this.message instanceof TemplateRef) {
+            this._ariaDescriber.removeDescription(this._elementRef.nativeElement, this.message.elementRef.nativeElement);
+        } else {
+            this._ariaDescriber.removeDescription(this._elementRef.nativeElement, this.message);
+        }
         this._focusMonitor.stopMonitoring(this._elementRef);
     }
 
@@ -397,7 +403,7 @@ export class UmaTooltipDirective implements OnDestroy, OnInit {
         // Must wait for the message to be painted to the tooltip so that the overlay can properly
         // calculate the correct positioning based on the size of the text.
         if (this._tooltipInstance) {
-            this._tooltipInstance.message = this.sanitizer.bypassSecurityTrustHtml(this.message);
+            this._tooltipInstance.message = this.message;
             this._tooltipInstance._markForCheck();
 
             this._ngZone.onMicrotaskEmpty.asObservable().pipe(
